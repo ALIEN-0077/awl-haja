@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alien - Official Page</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;900&family=Rajdhani:wght@500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #030308;
+            background-image: 
+                radial-gradient(at 10% 10%, rgba(0, 255, 204, 0.2) 0px, transparent 50%),
+                radial-gradient(at 90% 90%, rgba(255, 0, 85, 0.2) 0px, transparent 50%);
+            color: #ffffff;
+            font-family: 'Rajdhani', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        .card {
+            position: relative;
+            background: rgba(10, 11, 18, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 255, 204, 0.3);
+            border-radius: 28px;
+            padding: 45px 30px;
+            max-width: 430px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.9), inset 0 0 25px rgba(0, 255, 204, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .card:hover {
+            border-color: rgba(0, 255, 204, 0.8);
+            box-shadow: 0 0 40px rgba(0, 255, 204, 0.35);
+            transform: translateY(-5px);
+        }
+
+        .img-wrapper {
+            position: relative;
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 25px;
+        }
+
+        .img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 3px solid #00ffcc;
+            position: relative;
+            z-index: 2;
+        }
+
+        .img-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -6px; left: -6px; right: -6px; bottom: -6px;
+            background: linear-gradient(45deg, #00ffcc, #ff0055, #00ffcc);
+            border-radius: 50%;
+            z-index: 1;
+            filter: blur(12px);
+            opacity: 0.8;
+            animation: spin 5s linear infinite;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 28px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            background: linear-gradient(180deg, #ffffff, #00ffcc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 6px;
+            text-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+
+        p {
+            color: #9aa0b4;
+            font-size: 15px;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff0055;
+            font-size: 12px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin: 22px 0 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        .section-title::before, .section-title::after {
+            content: '';
+            height: 1px;
+            width: 35px;
+            background: #ff0055;
+            opacity: 0.6;
+        }
+
+        audio {
+            width: 100%;
+            height: 42px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+            filter: invert(100%) hue-rotate(150deg) drop-shadow(0 0 6px #00ffcc);
+        }
+
+        .btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-decoration: none;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #00ffcc;
+            color: #030308;
+            box-shadow: 0 0 20px rgba(0, 255, 204, 0.4);
+        }
+
+        .btn-primary:hover {
+            background: #ffffff;
+            box-shadow: 0 0 35px rgba(0, 255, 204, 0.85);
+            transform: translateY(-2px);
+        }
+
+        .btn-instagram {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            color: #ffffff;
+            box-shadow: 0 0 20px rgba(220, 39, 67, 0.4);
+        }
+
+        .btn-instagram:hover {
+            box-shadow: 0 0 35px rgba(220, 39, 67, 0.85);
+            transform: translateY(-2px);
+            filter: brightness(1.15);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .btn-secondary:hover {
+            border-color: #ff0055;
+            color: #ff0055;
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.5);
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 35px 22px;
+            }
+            .img-wrapper {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <div class="img-wrapper">
+            <img src="khoya.jpg" alt="ma photo">
+        </div>
+
+        <h1>I'M HADES</h1>
+        <p>Prod by Ahmed</p>
+        <div class="section-title">Links</div>
+        <a href="https://youtube.com/@marchall.teach1?si=lVf_Vs0ZbsjJ5d3m" target="_blank" class="btn btn-primary">Watch on YouTube</a>
+        <a href="https://www.instagram.com/call.meteach?stkn=MWNjZG5pNndoNDBsMw==" target="_blank" class="btn btn-instagram">Instagram</a>
+
+    </div>
+
+</body>
+</html>
